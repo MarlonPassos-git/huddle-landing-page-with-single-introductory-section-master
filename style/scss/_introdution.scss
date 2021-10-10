@@ -1,0 +1,103 @@
+.introduction {
+
+    display: grid;
+    grid-template:
+        "img"
+        "title"
+        "paragraph"
+        "button"
+    ;
+    justify-items: center;
+
+    column-gap: flex(0, 52);
+
+    margin-top: rem(32);
+
+    @media (min-width: $decktopWidth) {
+        grid-template:
+            "img title"
+            "img paragraph"
+            "img button"1fr;
+    }
+
+
+
+    &__img {
+        grid-area: img;
+
+
+        /* width: flex(296, 696) */
+        width: flex(303, 710, true);
+        height: flex(213, 510, true);
+        max-width: 710px;
+
+        @media (max-width: 374px) {
+            height: auto;
+            width: 100%
+        }
+
+    }
+
+    &__title {
+        grid-area: title;
+
+        color: $c__white;
+        line-height: 1.5;
+        font-weight: 600;
+        font-family: Poppins;
+        text-align: center;
+        font-size: flex(24, 40);
+        margin-top: rem(60);
+
+        @media (min-width: $decktopWidth) {
+            text-align: left;
+            margin-top: flex(0, 40);
+            justify-self: start;
+            max-width: rem(630);
+        }
+    }
+
+    &__paragraph {
+        grid-area: paragraph;
+
+        color: $c__white;
+        font-family: 'Open Sans', sans-serif;
+        font-size: flex(16, 18);
+        line-height: 1.5;
+        text-align: center;
+        margin-top: flex(16, 24);
+        margin-bottom: rem(24);
+        max-width: rem(518);
+
+
+        @media (min-width: $decktopWidth) {
+            text-align: left;
+            justify-self: start;
+
+        }
+    }
+
+    &__button {
+        grid-area: button;
+
+        font-family: 'Poppins', sans-serif;
+        color: $c__studio;
+        display: grid;
+        place-items: center;
+        width: 200px;
+        height: flex(40, 56);
+        color: $c__studio;
+        background-color: $c__white;
+        border-radius: 28px;
+        box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.26);
+        font-size: flex(12, 18);
+        cursor: pointer;
+
+        @media (min-width: $decktopWidth) {
+            justify-self: start;
+        }
+
+
+
+    }
+}

@@ -1,0 +1,43 @@
+// Functions 
+
+@function rem($pixels, $contexto: 16) {
+    @return ($pixels / $contexto) * 1rem;
+}
+
+@function flex($minSize, $maxSize, $limitMin: false, $mobileWidth: 375, $decktopWidth: 1440) {
+
+
+    $a: $maxSize * 1px;
+    $b: $minSize - $maxSize;
+    $c: $decktopWidth - $mobileWidth;
+    $d: $minSize * 1px;
+    $e: $decktopWidth * 1px;
+
+    @if limitMin {
+        @return min(#{$a}, calc(#{$a} + #{$b} * ((#{$e} - 100vw) / #{$c})))
+    }
+
+    @return clamp(#{$d}, calc(#{$a} + #{$b} * ((#{$e} - 100vw) / #{$c})), #{$a})
+}
+
+
+
+
+
+
+
+// Colors
+$c__white: #FFFFFF;
+$c__mystic: #E1E8EE;
+
+$c__cadet-blue: #A7B9C8;
+$c__alto: #D8D8D8;
+$c__daintree: #00252E;
+$c__hot-pink: #FF52C1;
+$c__studio: #684BB1;
+$c__lavender-magenta: #E880E8;
+
+
+// Widths 
+
+$decktopWidth: 1000px;

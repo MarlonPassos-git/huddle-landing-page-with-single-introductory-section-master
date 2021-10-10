@@ -1,0 +1,12 @@
+.header {
+
+    height: flex(95.4, 160);
+    display: grid;
+    justify-items: start;
+    align-items: center;
+
+    &__img {
+        /* height: flex(19, 32); */
+        width: flex(128, 211);
+    }
+}
